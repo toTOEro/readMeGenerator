@@ -82,8 +82,8 @@ function generateMarkdown(data) {
 
 
   // Handling the inclusion of contribution instructions or test instructions if none are provided
-  const githubURL = `https://github.com/${contribution}`;
-  const contributionSect = contribution !== 'None' ? `\n  ## How to Contribute\n\n  ${githubURL} \n` : '';
+  const githubURL = `https://github.com/${credits}`;
+  const contributionSect = contribution !== 'None' ? `\n  ## How to Contribute\n\n  ${contribution} \n` : '';
   const testSect = tests !== 'None' ? `\n  ## Tests\n\n  ${tests} \n` : '';
   const modularSection = contributionSect + testSect;
 
@@ -112,7 +112,7 @@ function generateMarkdown(data) {
 
   ## Credits
 
-  ${credits} 
+  ${githubURL} 
   ${modularSection}
   ## Questions
   
