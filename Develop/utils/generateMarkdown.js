@@ -1,5 +1,6 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+
+// The following function renders the license badge and includes the link to the license within it. 
+// If there is no license, an empty string is returned
 function renderLicenseBadge(license) {
 
   // License links pulled from https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
@@ -40,63 +41,28 @@ function renderLicenseBadge(license) {
 
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
-  switch (license) {
-    case 'Apache':
-      return '(https://opensource.org/licenses/Apache-2.0)';
-    case 'Boost':
-      return '(https://www.boost.org/LICENSE_1_0.txt)';
-    case 'BSD':
-      return '(https://opensource.org/licenses/BSD-3-Clause)';
-    case 'Eclipse':
-      return '(https://opensource.org/licenses/EPL-1.0)';
-    case 'GNU GPLv3':
-      return '(https://www.gnu.org/licenses/gpl-3.0)';
-    case 'Hippocratic':
-      return '(https://firstdonoharm.dev)';
-    case 'IBM':
-      return '(https://opensource.org/licenses/IPL-1.0)';
-    case 'ISC':
-      return '(https://opensource.org/licenses/ISC)';
-    case 'MIT':
-      return '(https://opensource.org/licenses/MIT)';
-    case 'Mozilla':
-      return '(https://opensource.org/licenses/MPL-2.0)';
-    case 'PERL':
-      return '(https://opensource.org/licenses/Artistic-2.0)';
-    case 'SIL':
-      return '(https://opensource.org/licenses/OFL-1.1)';
-    case 'Unlicense':
-      return '(http://unlicense.org/)';
-    case 'WTFPL':
-      return '(http://www.wtfpl.net/about/)';
-    case 'Zlib':
-      return '(https://opensource.org/licenses/Zlib)';
-    case 'None':
-      return '';
-  }
 
-}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
+  // console.log(renderLicenseBadge(license))
 
-  const licenseBadge = renderLicenseBadge(license) + renderLicenseLink(license);
+  const licenseBadge = renderLicenseBadge(license);
+  return `
+  ## License
 
-  const licenseSection = `
-    ## License
-
-    ${licenseBadge}
+  ${licenseBadge}
   
   `
 }
 
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  const { title, description, installation, usage, credits, license, badges, contribution, tests } = data;
+  const { title, description, installation, usage, credits, license, contribution, tests } = data;
+
+  const licenseSection = renderLicenseSection(license)
 
   // Handling table of contents if there are no contribution instructions or test instructions provided
   const contributeTbl = contribution !== 'None' ? `\n  - [How to Contribute](#how-to-contribute)` : '';
@@ -118,9 +84,9 @@ function generateMarkdown(data) {
 
   // readMe template derived from https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide
   return `
-  # ${title}}
+  # ${title}
 
-  ${renderLicenseSection(license)}
+  ${licenseSection}
 
   ## Description
 

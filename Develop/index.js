@@ -83,12 +83,6 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Image path?',
-        name: 'image',
-        default: 'None'
-    },
-    {
-        type: 'input',
         message: 'Email Address?',
         name: 'email',
         validate: input => input ? true : console.warn('\nPlease provide a value'),
