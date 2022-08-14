@@ -76,7 +76,7 @@ function generateMarkdown(data) {
   - [Usage](#usage)
   - [Credits](#credits)
   - [License](#license)   ${modularTable}
-  - [Contact Me](#contact-me)
+  - [Questions](#questions)
   `;
 
 
@@ -114,7 +114,7 @@ function generateMarkdown(data) {
 
   ${credits} 
   ${modularSection}
-  ## Questions?
+  ## Questions
   
   Reach out to me via GitHub or email!
   ${githubURL}
