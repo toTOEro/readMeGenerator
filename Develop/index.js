@@ -34,7 +34,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Who contributed? List in this format: username2, username2, ... ',
+        message: 'What is your GitHub username?',
         name: 'credits',
         validate: input => input ? true : console.warn('\nPlease provide a value'),
 

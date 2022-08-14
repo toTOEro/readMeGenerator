@@ -82,7 +82,8 @@ function generateMarkdown(data) {
 
 
   // Handling the inclusion of contribution instructions or test instructions if none are provided
-  const contributionSect = contribution !== 'None' ? `\n  ## How to Contribute\n\n  ${contribution} \n` : '';
+  const githubURL = `https://github.com/${contribution}`;
+  const contributionSect = contribution !== 'None' ? `\n  ## How to Contribute\n\n  ${githubURL} \n` : '';
   const testSect = tests !== 'None' ? `\n  ## Tests\n\n  ${tests} \n` : '';
   const modularSection = contributionSect + testSect;
 
@@ -113,8 +114,10 @@ function generateMarkdown(data) {
 
   ${credits} 
   ${modularSection}
-  ## Contact Me
-
+  ## Questions?
+  
+  Reach out to me via GitHub or email!
+  ${githubURL}
   ${email}
   `;
 }
