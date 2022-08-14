@@ -116,9 +116,12 @@ function generateMarkdown(data) {
   ${modularSection}
   ## Questions
   
-  Reach out to me via GitHub or email!
+  Reach out to me via GitHub or email! 
+
   ${githubURL}
+
   ${email}
+  
   `;
 }
 
