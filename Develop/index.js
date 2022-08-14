@@ -88,16 +88,10 @@ const questions = [
         validate: input => input ? true : console.warn('\nPlease provide a value'),
 
     },
-    // {
-    //     type: 'input',
-    //     message: 'Questions?',
-    //     name: 'questions',
-    //     default: ''
-    // },
 ];
 
 
-// TODO: Create a function to write README file
+// The writeToFile function generates the readme file.
 function writeToFile(fileName, data) {
 
     fs.writeFile(fileName,data, (err) => 
@@ -105,7 +99,7 @@ function writeToFile(fileName, data) {
     );
 };
 
-// TODO: Create a function to initialize app
+// This function initializes the app to begin asking questions.
 function init() {
     inquirer
         .prompt(questions)

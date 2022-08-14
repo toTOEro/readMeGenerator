@@ -1,4 +1,3 @@
-
 // The following function renders the license badge and includes the link to the license within it. 
 // If there is no license, an empty string is returned
 function renderLicenseBadge(license) {
@@ -43,22 +42,26 @@ function renderLicenseBadge(license) {
 
 
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// Returns the license section of the README.
+// If there is no license, returns an empty section
 function renderLicenseSection(license) {
-  // console.log(renderLicenseBadge(license))
 
+  if (license != 'None') {
   const licenseBadge = renderLicenseBadge(license);
   return `
   ## License
 
   ${licenseBadge}
   
-  `
+  ` } else {
+    return ''
+  }
+
 }
 
 
-// TODO: Create a function to generate markdown for README
+// The generateMarkdown function takes the information from the inquirer answers in index.js
+// and generates markdown based off the responses.
 function generateMarkdown(data) {
   const { title, description, installation, usage, credits, license, contribution, tests } = data;
 
