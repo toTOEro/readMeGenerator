@@ -5,13 +5,7 @@ const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 const questions = [
-    {
-        type: 'input',
-        message: 'Provide a file name:',
-        name: 'fileName',
-        validate: input => input ? true : console.warn('\nPlease provide a value'),
-        default: 'README',
-    },
+
     {
         type: 'input',
         message: 'What is the title of your project?',
@@ -104,7 +98,7 @@ function init() {
     inquirer
         .prompt(questions)
         .then((response) =>
-            writeToFile(response.fileName + '.md', generateMarkdown(response))
+            writeToFile(response.title.replace(' ', '_') + '.md', generateMarkdown(response))
         )
 
 }

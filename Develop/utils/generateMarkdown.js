@@ -63,7 +63,7 @@ function renderLicenseSection(license) {
 // The generateMarkdown function takes the information from the inquirer answers in index.js
 // and generates markdown based off the responses.
 function generateMarkdown(data) {
-  const { title, description, installation, usage, credits, license, contribution, tests } = data;
+  const { title, description, installation, usage, credits, license, contribution, tests, email } = data;
 
   const licenseSection = renderLicenseSection(license)
 
@@ -76,6 +76,7 @@ function generateMarkdown(data) {
   - [Usage](#usage)
   - [Credits](#credits)
   - [License](#license)   ${modularTable}
+  - [Contact Me](#contact-me)
   `;
 
 
@@ -111,9 +112,10 @@ function generateMarkdown(data) {
   ## Credits
 
   ${credits} 
-
-
   ${modularSection}
+  ## Contact Me
+
+  ${email}
   `;
 }
 
