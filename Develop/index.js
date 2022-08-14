@@ -54,7 +54,6 @@ const questions = [
             'Apache',
             'Boost',
             'BSD',
-            'Creative Commons',
             'Eclipse',
             'GNU GPLv3',
             'Hippocratic',
